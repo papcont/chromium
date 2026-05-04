@@ -1,0 +1,27 @@
+# Nexus constituent repositories
+# Run: git submodule update --init --recursive
+
+[submodule "nexus/apps/cadam"]
+	path = nexus/apps/cadam
+	url = https://github.com/papcont/cadam.git
+	branch = main
+
+[submodule "nexus/apps/editor"]
+	path = nexus/apps/editor
+	url = https://github.com/papcont/editor.git
+	branch = main
+
+[submodule "nexus/apps/plm-extensions"]
+	path = nexus/apps/plm-extensions
+	url = https://github.com/papcont/plm-extensions.git
+	branch = main
+
+[submodule "nexus/apps/asset-guardian"]
+	path = nexus/apps/asset-guardian
+	url = https://github.com/papcont/asset-guardian-1.git
+	branch = main
+
+[submodule "nexus/mobile/sceneform"]
+	path = nexus/mobile/sceneform
+	url = https://github.com/papcont/sceneform-android.git
+	branch = main

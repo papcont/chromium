@@ -1,0 +1,60 @@
+[
+  {
+    "id": "cadam",
+    "name": "CADAM",
+    "description": "Transform natural language into parametric 3D models",
+    "icon": "⛮",
+    "url": "nexus://app/cadam",
+    "category": "cad",
+    "badge": "Text to CAD",
+    "shortcut": 1
+  },
+  {
+    "id": "pascal-editor",
+    "name": "Pascal Editor",
+    "description": "WebGPU-powered 3D building and architectural editor",
+    "icon": "🏗",
+    "url": "nexus://app/pascal-editor",
+    "category": "3d-editor",
+    "badge": "WebGPU",
+    "shortcut": 2
+  },
+  {
+    "id": "plm-portal",
+    "name": "PLM Portal",
+    "description": "Browse and manage product lifecycle data in Fusion Manage",
+    "icon": "📦",
+    "url": "nexus://app/plm-portal",
+    "category": "plm",
+    "badge": "Fusion Manage",
+    "shortcut": 3
+  },
+  {
+    "id": "bom-editor",
+    "name": "BOM Editor",
+    "description": "Transform Engineering BOM to Manufacturing and Service BOMs",
+    "icon": "🔧",
+    "url": "nexus://app/bom-editor",
+    "category": "plm",
+    "shortcut": 4
+  },
+  {
+    "id": "asset-guardian",
+    "name": "Asset Guardian",
+    "description": "AI-powered PLM asset monitoring and compliance tracking",
+    "icon": "🛡",
+    "url": "nexus://app/asset-guardian",
+    "category": "ai",
+    "badge": "AI",
+    "shortcut": 5
+  },
+  {
+    "id": "workspace-navigator",
+    "name": "Workspace Navigator",
+    "description": "Mass edit, compare and manage PLM records across workspaces",
+    "icon": "🗂",
+    "url": "nexus://app/workspace-navigator",
+    "category": "plm",
+    "shortcut": 6
+  }
+]

@@ -1,0 +1,47 @@
+# Nexus Engineering Browser — GN Build Configuration
+#
+# Usage:
+#   gn gen out/Nexus --args='nexus_engineering_browser=true is_debug=false'
+#   autoninja -C out/Nexus chrome
+
+declare_args() {
+  # Set to true to build the Nexus engineering browser variant.
+  # Enables all Nexus-specific targets: app launcher, PLM side panel,
+  # native AI service, plm:// protocol handler, and raised WASM limits.
+  nexus_engineering_browser = false
+}
+
+if (nexus_engineering_browser) {
+  group("nexus") {
+    deps = [
+      ":nexus_launcher",
+      ":nexus_plm_extension",
+      ":nexus_build_flags",
+    ]
+  }
+
+  # Custom new-tab page (app launcher)
+  group("nexus_launcher") {
+    # Sources: nexus/src/launcher/
+    # Registered in chrome/browser/ui/webui/new_tab_page/
+    deps = []
+  }
+
+  # Pre-installed PLM extension (component extension, user cannot remove)
+  group("nexus_plm_extension") {
+    # Sources: nexus/src/chrome/nexus_extension/
+    # Registered in chrome/browser/extensions/component_extensions_resource_manager.cc
+    deps = []
+  }
+
+  # Build-time feature flags exposed to C++ via generated header
+  buildflag_header("nexus_build_flags") {
+    header = "nexus_buildflags.h"
+    flags = [
+      "ENABLE_NEXUS_BROWSER=$nexus_engineering_browser",
+      "NEXUS_PLM_SIDE_PANEL=true",
+      "NEXUS_AI_SERVICE=true",
+      "NEXUS_PLM_PROTOCOL=true",
+    ]
+  }
+}

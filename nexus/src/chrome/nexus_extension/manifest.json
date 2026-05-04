@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Nexus PLM Integration",
+  "version": "1.0.0",
+  "description": "Native PLM integration for the Nexus engineering browser. Provides PLM side panel, plm:// protocol support, and Fusion Manage UX enhancements.",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "notifications",
+    "background"
+  ],
+  "host_permissions": [
+    "*://*.autodeskplm360.net/*",
+    "https://aps.autodesk.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.autodeskplm360.net/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "PLM",
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "_nexus": {
+    "component_extension": true,
+    "user_removable": false,
+    "replaces": "papcont/plm-extensions chrome/"
+  }
+}
