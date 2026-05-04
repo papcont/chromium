@@ -1,0 +1,48 @@
+/*
+ * Nexus Design Tokens
+ * CSS custom properties shared across all engineering apps.
+ * Import in each app's root CSS: @import '/nexus/design-tokens/tokens.css';
+ */
+
+:root {
+  /* ── Background layers ────────────────────────────────────────────────── */
+  --nexus-bg:          #09090b;
+  --nexus-surface:     #18181b;
+  --nexus-surface-2:   #27272a;
+  --nexus-border:      #3f3f46;
+
+  /* ── Typography ───────────────────────────────────────────────────────── */
+  --nexus-text:        #fafafa;
+  --nexus-muted:       #71717a;
+  --nexus-font-sans:   'Geist', 'Inter', system-ui, sans-serif;
+  --nexus-font-mono:   'Geist Mono', 'JetBrains Mono', monospace;
+
+  /* ── Accent / interactive ─────────────────────────────────────────────── */
+  --nexus-accent:      #3b82f6;
+  --nexus-accent-dim:  rgba(59, 130, 246, 0.15);
+  --nexus-accent-hover:rgba(59, 130, 246, 0.25);
+
+  /* ── Status ───────────────────────────────────────────────────────────── */
+  --nexus-success:     #22c55e;
+  --nexus-warning:     #f59e0b;
+  --nexus-error:       #ef4444;
+
+  /* ── CAD colours ──────────────────────────────────────────────────────── */
+  --nexus-cad-grid:    rgba(255, 255, 255, 0.06);
+  --nexus-cad-axis-x:  #ef4444;
+  --nexus-cad-axis-y:  #22c55e;
+  --nexus-cad-axis-z:  #3b82f6;
+  --nexus-cad-select:  rgba(59, 130, 246, 0.35);
+
+  /* ── PLM status ───────────────────────────────────────────────────────── */
+  --plm-draft:         #71717a;
+  --plm-review:        #f59e0b;
+  --plm-approved:      #22c55e;
+  --plm-released:      #3b82f6;
+  --plm-obsolete:      #ef4444;
+
+  /* ── Spacing & shape ──────────────────────────────────────────────────── */
+  --nexus-radius:      10px;
+  --nexus-radius-sm:   6px;
+  --nexus-radius-lg:   16px;
+}
