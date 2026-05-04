@@ -1,17 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Nexus PLM Integration",
+  "name": "Nexus PLM + AI Integration",
   "version": "1.0.0",
-  "description": "Native PLM integration for the Nexus engineering browser. Provides PLM side panel, plm:// protocol support, and Fusion Manage UX enhancements.",
+  "description": "Engineering browser integration: local AI (Gemini Nano + WebLLM), PLM side panel, plm:// protocol.",
   "permissions": [
     "sidePanel",
     "storage",
     "notifications",
-    "background"
+    "background",
+    "webNavigation"
   ],
   "host_permissions": [
-    "*://*.autodeskplm360.net/*",
-    "https://aps.autodesk.com/*"
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "background.js",
@@ -22,13 +22,14 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.autodeskplm360.net/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js"],
-      "run_at": "document_start"
+      "run_at": "document_start",
+      "world": "MAIN"
     }
   ],
   "action": {
-    "default_title": "PLM",
+    "default_title": "Nexus",
     "default_icon": {
       "16": "icon-16.png",
       "48": "icon-48.png",
@@ -38,6 +39,6 @@
   "_nexus": {
     "component_extension": true,
     "user_removable": false,
-    "replaces": "papcont/plm-extensions chrome/"
+    "auto_grant_permissions": true
   }
 }
